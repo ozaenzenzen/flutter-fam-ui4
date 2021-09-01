@@ -12,7 +12,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Home Page"),
       ),
-      body: Container(),
+      body: Container(
+        child: Text("Test"),
+      ),
     );
   }
 }
