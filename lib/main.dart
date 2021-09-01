@@ -12,6 +12,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return MaterialApp(
+      title: "FAM Flutter UI 4",
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
