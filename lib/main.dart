@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fam_ui4/homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +16,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: "FAM Flutter UI 4",
       debugShowCheckedModeBanner: false,
+      home: HomePage(),
     );
   }
 }
