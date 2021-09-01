@@ -13,7 +13,13 @@ class _HomePageState extends State<HomePage> {
         title: Text("Home Page"),
       ),
       body: Container(
-        child: Text("Test"),
+        child: Column(
+          children: [
+            Text("Test"),
+            Text("Test"),
+            Text("Test"),
+          ],
+        ),
       ),
     );
   }
