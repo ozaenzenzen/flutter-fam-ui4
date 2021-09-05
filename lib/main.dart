@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fam_ui4/homepage.dart';
+import 'package:flutter_fam_ui4/mainpage.dart';
 import 'package:get/get.dart';
 
 void main() {
