@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       title: "FAM Flutter UI 4",
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: MainPage(),
       defaultTransition: Transition.cupertino,
     );
   }
