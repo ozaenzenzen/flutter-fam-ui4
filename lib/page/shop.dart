@@ -8,8 +8,11 @@ class ShopPage extends StatefulWidget {
 class _ShopPageState extends State<ShopPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Shop"),
+    return Center(
+      child: Container(
+        child: Text("Shop"),
+        color: Colors.blue,
+      ),
     );
   }
 }

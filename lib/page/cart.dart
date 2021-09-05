@@ -8,8 +8,11 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Cart"),
+    return Center(
+      child: Container(
+        child: Text("Cart"),
+        color: Colors.pink,
+      ),
     );
   }
 }
