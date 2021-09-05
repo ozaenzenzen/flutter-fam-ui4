@@ -1,15 +1,35 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_fam_ui4/page/cart.dart';
+import 'package:flutter_fam_ui4/page/home.dart';
+import 'package:flutter_fam_ui4/page/profile.dart';
+import 'package:flutter_fam_ui4/page/shop.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatefulWidget {
+class MainPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainPageState extends State<MainPage> {
+  List<Widget> page = [
+    HomePage(),
+    CartPage(),
+    ProfilePage(),
+    ShopPage(),
+  ];
+
+  bool pageColor = true;
+  bool isActive = false;
+
+  var initialPage = 0;
+  PageController controller = PageController();
+  // ScrollController controller = ScrollController();
+
+  int nowPage = 0;
   @override
   Widget build(BuildContext context) {
+    print(nowPage);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -35,14 +55,14 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Text("Test"),
-            Text("Test"),
-            Text("Test"),
-          ],
-        ),
+      body: PageView(
+        children: page,
+        controller: controller,
+        physics: BouncingScrollPhysics(),
+        onPageChanged: (page) {
+          // print(page);
+          nowPage = page;
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
@@ -65,38 +85,50 @@ class _HomePageState extends State<HomePage> {
             children: [
               IconButton(
                 onPressed: () {
-                  //
+                  setState(() {
+                    controller.jumpToPage(0);
+                    nowPage = 0;
+                  });
                 },
                 icon: Icon(
                   CupertinoIcons.house_fill,
-                  color: Colors.white,
+                  color: (nowPage == 0) ? Colors.pink : Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {
-                  //
+                  setState(() {
+                    controller.jumpToPage(1);
+                    nowPage = 1;
+                  });
                 },
                 icon: Icon(
                   CupertinoIcons.bag_fill,
-                  color: Colors.white,
+                  color: (nowPage == 1) ? Colors.pink : Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {
-                  //
+                  setState(() {
+                    controller.jumpToPage(2);
+                    nowPage = 2;
+                  });
                 },
                 icon: Icon(
                   CupertinoIcons.shopping_cart,
-                  color: Colors.white,
+                  color: (nowPage == 2) ? Colors.pink : Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {
-                  //
+                  setState(() {
+                    controller.jumpToPage(3);
+                    nowPage = 3;
+                  });
                 },
                 icon: Icon(
                   CupertinoIcons.person_fill,
-                  color: Colors.white,
+                  color: (nowPage == 3) ? Colors.pink : Colors.white,
                 ),
               ),
             ],
