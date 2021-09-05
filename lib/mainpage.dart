@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_fam_ui4/data/page.dart';
 import 'package:flutter_fam_ui4/page/cart.dart';
 import 'package:flutter_fam_ui4/page/home.dart';
 import 'package:flutter_fam_ui4/page/profile.dart';
@@ -12,12 +13,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List<Widget> page = [
-    HomePage(),
-    CartPage(),
-    ProfilePage(),
-    ShopPage(),
-  ];
+  DataPage dataPage = DataPage();
 
   bool pageColor = true;
   bool isActive = false;
@@ -29,7 +25,7 @@ class _MainPageState extends State<MainPage> {
   int nowPage = 0;
   @override
   Widget build(BuildContext context) {
-    print(nowPage);
+    // print(nowPage);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -56,7 +52,7 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
       body: PageView(
-        children: page,
+        children: dataPage.page,
         controller: controller,
         physics: BouncingScrollPhysics(),
         onPageChanged: (page) {
@@ -77,60 +73,84 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        notchMargin: 4.5,
+        color: Colors.purple[900],
+        shape: CircularNotchedRectangle(),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-          decoration: BoxDecoration(
-            color: Colors.deepPurple[700],
+          padding: EdgeInsets.symmetric(
+            vertical: 10,
+            horizontal: 10,
           ),
+          color: Colors.transparent,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
                 onPressed: () {
                   setState(() {
-                    controller.jumpToPage(0);
+                    controller.animateToPage(
+                      0,
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.decelerate,
+                    );
                     nowPage = 0;
                   });
                 },
                 icon: Icon(
                   CupertinoIcons.house_fill,
-                  color: (nowPage == 0) ? Colors.purpleAccent[400] : Colors.white,
+                  color:
+                      (nowPage == 0) ? Colors.purpleAccent[400] : Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {
                   setState(() {
-                    controller.jumpToPage(1);
+                    controller.animateToPage(
+                      1,
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.decelerate,
+                    );
                     nowPage = 1;
                   });
                 },
                 icon: Icon(
                   CupertinoIcons.bag_fill,
-                  color: (nowPage == 1) ? Colors.purpleAccent[400] : Colors.white,
+                  color:
+                      (nowPage == 1) ? Colors.purpleAccent[400] : Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {
                   setState(() {
-                    controller.jumpToPage(2);
+                    controller.animateToPage(
+                      2,
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.decelerate,
+                    );
                     nowPage = 2;
                   });
                 },
                 icon: Icon(
                   CupertinoIcons.shopping_cart,
-                  color: (nowPage == 2) ? Colors.purpleAccent[400] : Colors.white,
+                  color:
+                      (nowPage == 2) ? Colors.purpleAccent[400] : Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {
                   setState(() {
-                    controller.jumpToPage(3);
+                    controller.animateToPage(
+                      3,
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.decelerate,
+                    );
                     nowPage = 3;
                   });
                 },
                 icon: Icon(
                   CupertinoIcons.person_fill,
-                  color: (nowPage == 3) ? Colors.purpleAccent[400] : Colors.white,
+                  color:
+                      (nowPage == 3) ? Colors.purpleAccent[400] : Colors.white,
                 ),
               ),
             ],
