@@ -61,7 +61,9 @@ class _MainPageState extends State<MainPage> {
         physics: BouncingScrollPhysics(),
         onPageChanged: (page) {
           // print(page);
-          nowPage = page;
+          setState(() {
+            nowPage = page;
+          });
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -92,7 +94,7 @@ class _MainPageState extends State<MainPage> {
                 },
                 icon: Icon(
                   CupertinoIcons.house_fill,
-                  color: (nowPage == 0) ? Colors.pink : Colors.white,
+                  color: (nowPage == 0) ? Colors.purpleAccent[400] : Colors.white,
                 ),
               ),
               IconButton(
@@ -104,7 +106,7 @@ class _MainPageState extends State<MainPage> {
                 },
                 icon: Icon(
                   CupertinoIcons.bag_fill,
-                  color: (nowPage == 1) ? Colors.pink : Colors.white,
+                  color: (nowPage == 1) ? Colors.purpleAccent[400] : Colors.white,
                 ),
               ),
               IconButton(
@@ -116,7 +118,7 @@ class _MainPageState extends State<MainPage> {
                 },
                 icon: Icon(
                   CupertinoIcons.shopping_cart,
-                  color: (nowPage == 2) ? Colors.pink : Colors.white,
+                  color: (nowPage == 2) ? Colors.purpleAccent[400] : Colors.white,
                 ),
               ),
               IconButton(
@@ -128,7 +130,7 @@ class _MainPageState extends State<MainPage> {
                 },
                 icon: Icon(
                   CupertinoIcons.person_fill,
-                  color: (nowPage == 3) ? Colors.pink : Colors.white,
+                  color: (nowPage == 3) ? Colors.purpleAccent[400] : Colors.white,
                 ),
               ),
             ],
