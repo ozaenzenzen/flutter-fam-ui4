@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -10,7 +11,12 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        child: Text("Profile"),
+        child: Text(
+          "Profile",
+          style: GoogleFonts.poppins(
+            fontSize: 30,
+          ),
+        ),
         color: Colors.green,
       ),
     );
