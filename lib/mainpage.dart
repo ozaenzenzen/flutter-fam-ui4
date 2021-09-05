@@ -1,10 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fam_ui4/data/page.dart';
-import 'package:flutter_fam_ui4/page/cart.dart';
-import 'package:flutter_fam_ui4/page/home.dart';
-import 'package:flutter_fam_ui4/page/profile.dart';
-import 'package:flutter_fam_ui4/page/shop.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainPage extends StatefulWidget {
