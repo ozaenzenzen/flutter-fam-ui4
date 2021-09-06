@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fam_ui4/data/page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainPage extends StatefulWidget {
@@ -11,12 +12,9 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   DataPage dataPage = DataPage();
 
-  bool pageColor = true;
-  bool isActive = false;
-
-  var initialPage = 0;
   PageController controller = PageController();
-  // ScrollController controller = ScrollController();
+
+  ScreenUtil screenUtil = ScreenUtil();
 
   int nowPage = 0;
   @override
@@ -27,16 +25,31 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Text(
-          "Home Page",
-          style: GoogleFonts.poppins(
-            color: Colors.purple[700],
-            fontWeight: FontWeight.w600,
+        title: RichText(
+          text: TextSpan(
+            text: "FAM",
+            style: GoogleFonts.poppins(
+              fontSize: screenUtil.setSp(17),
+              color: Colors.purple,
+              fontWeight: FontWeight.w800,
+            ),
+            children: [
+              TextSpan(
+                text: "-STYLE PHONE",
+                style: GoogleFonts.poppins(
+                  color: Colors.deepPurple[700],
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ],
           ),
         ),
         centerTitle: true,
         actions: [
           IconButton(
+            padding: EdgeInsets.symmetric(
+              horizontal: screenUtil.setHeight(20),
+            ),
             onPressed: () {
               //
             },
@@ -70,7 +83,7 @@ class _MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: BottomAppBar(
         notchMargin: 4.5,
-        color: Colors.purple[900],
+        color: Colors.deepPurple[700],
         shape: CircularNotchedRectangle(),
         child: Container(
           padding: EdgeInsets.symmetric(
