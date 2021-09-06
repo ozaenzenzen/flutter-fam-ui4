@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fam_ui4/items/home_populardeals_item.dart';
 import 'package:flutter_fam_ui4/page/detail_page/home_up_detail_page.dart';
+import 'package:flutter_fam_ui4/utils/images.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -120,8 +121,7 @@ class _HomePageState extends State<HomePage> {
                       tag: "s",
                       child: Image(
                         height: screenUtil.setHeight(190),
-                        image: NetworkImage(
-                            "https://cdn-images-1.medium.com/max/1200/1*5-aoK8IBmXve5whBQM90GA.png"),
+                        image: NetworkImage(FAMImages.flutter_image),
                       ),
                     ),
                   ),
