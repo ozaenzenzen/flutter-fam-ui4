@@ -61,9 +61,10 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
       body: PageView(
+        // clipBehavior: Clip.antiAliasWithSaveLayer,
         children: dataPage.page,
         controller: controller,
-        physics: BouncingScrollPhysics(),
+        physics: ScrollPhysics(),
         onPageChanged: (page) {
           // print(page);
           setState(() {
