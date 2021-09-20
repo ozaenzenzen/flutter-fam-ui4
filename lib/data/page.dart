@@ -7,8 +7,8 @@ import 'package:flutter_fam_ui4/page/shop.dart';
 class DataPage{
    List<Widget> page = [
     HomePage(),
+    ShopPage(),
     CartPage(),
     ProfilePage(),
-    ShopPage(),
   ];
 }
